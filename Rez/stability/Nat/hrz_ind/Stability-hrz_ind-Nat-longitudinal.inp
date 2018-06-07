@@ -1,5 +1,5 @@
 
-title: Stability of values - Nat aspfin longitudinal;
+title: Stability of values - Nat hrz_ind longitudinal;
 data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
 
 variable:
@@ -151,10 +151,10 @@ dvrt_ind
 dvrt_ind_d;
 
 USEVARIABLES =
-aaspfin
-baspfin
-caspfin
-daspfin
+ahrz_ind
+bhrz_ind
+chrz_ind
+dhrz_ind
 aage
 ;
 
@@ -172,62 +172,62 @@ estimator = ml;
 processors = 8; 
 
 MODEL:
-aaspfin WITH baspfin;
-baspfin WITH caspfin;
-caspfin WITH daspfin;
+ahrz_ind WITH bhrz_ind;
+bhrz_ind WITH chrz_ind;
+chrz_ind WITH dhrz_ind;
 
-aaspfin WITH caspfin;
-baspfin WITH daspfin;
+ahrz_ind WITH chrz_ind;
+bhrz_ind WITH dhrz_ind;
 
-aaspfin WITH daspfin;
+ahrz_ind WITH dhrz_ind;
 
 MODEL d2:
-aaspfin WITH baspfin (a2);
-baspfin WITH caspfin (a2);
-caspfin WITH daspfin (a2);
+ahrz_ind WITH bhrz_ind (a2);
+bhrz_ind WITH chrz_ind (a2);
+chrz_ind WITH dhrz_ind (a2);
 
-aaspfin WITH caspfin (b2);
-baspfin WITH daspfin (b2);
+ahrz_ind WITH chrz_ind (b2);
+bhrz_ind WITH dhrz_ind (b2);
 
-aaspfin WITH daspfin (c2);
+ahrz_ind WITH dhrz_ind (c2);
 
-aaspfin baspfin caspfin daspfin (e2);
+ahrz_ind bhrz_ind chrz_ind dhrz_ind (e2);
 
 MODEL d3:
-aaspfin WITH baspfin (a3);
-baspfin WITH caspfin (a3);
-caspfin WITH daspfin (a3);
+ahrz_ind WITH bhrz_ind (a3);
+bhrz_ind WITH chrz_ind (a3);
+chrz_ind WITH dhrz_ind (a3);
 
-aaspfin WITH caspfin (b3);
-baspfin WITH daspfin (b3);
+ahrz_ind WITH chrz_ind (b3);
+bhrz_ind WITH dhrz_ind (b3);
 
-aaspfin WITH daspfin (c3);
+ahrz_ind WITH dhrz_ind (c3);
 
-aaspfin baspfin caspfin daspfin (e3);
+ahrz_ind bhrz_ind chrz_ind dhrz_ind (e3);
 
 MODEL d4:
-aaspfin WITH baspfin (a4);
-baspfin WITH caspfin (a4);
-caspfin WITH daspfin (a4);
+ahrz_ind WITH bhrz_ind (a4);
+bhrz_ind WITH chrz_ind (a4);
+chrz_ind WITH dhrz_ind (a4);
 
-aaspfin WITH caspfin (b4);
-baspfin WITH daspfin (b4);
+ahrz_ind WITH chrz_ind (b4);
+bhrz_ind WITH dhrz_ind (b4);
 
-aaspfin WITH daspfin (c4);
+ahrz_ind WITH dhrz_ind (c4);
 
-aaspfin baspfin caspfin daspfin (e4);
+ahrz_ind bhrz_ind chrz_ind dhrz_ind (e4);
 
 MODEL d5:
-aaspfin WITH baspfin (a5);
-baspfin WITH caspfin (a5);
-caspfin WITH daspfin (a5);
+ahrz_ind WITH bhrz_ind (a5);
+bhrz_ind WITH chrz_ind (a5);
+chrz_ind WITH dhrz_ind (a5);
 
-aaspfin WITH caspfin (b5);
-baspfin WITH daspfin (b5);
+ahrz_ind WITH chrz_ind (b5);
+bhrz_ind WITH dhrz_ind (b5);
 
-aaspfin WITH daspfin (c5);
+ahrz_ind WITH dhrz_ind (c5);
 
-aaspfin baspfin caspfin daspfin (e5);
+ahrz_ind bhrz_ind chrz_ind dhrz_ind (e5);
 
 
 

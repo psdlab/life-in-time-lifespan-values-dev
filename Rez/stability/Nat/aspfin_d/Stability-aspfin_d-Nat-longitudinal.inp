@@ -1,5 +1,5 @@
 
-title: Stability of values - Nat aspfin longitudinal;
+title: Stability of values - Nat aspfin_d longitudinal;
 data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
 
 variable:
@@ -151,10 +151,10 @@ dvrt_ind
 dvrt_ind_d;
 
 USEVARIABLES =
-aaspfin
-baspfin
-caspfin
-daspfin
+aaspfin_d
+baspfin_d
+caspfin_d
+daspfin_d
 aage
 ;
 
@@ -172,62 +172,62 @@ estimator = ml;
 processors = 8; 
 
 MODEL:
-aaspfin WITH baspfin;
-baspfin WITH caspfin;
-caspfin WITH daspfin;
+aaspfin_d WITH baspfin_d;
+baspfin_d WITH caspfin_d;
+caspfin_d WITH daspfin_d;
 
-aaspfin WITH caspfin;
-baspfin WITH daspfin;
+aaspfin_d WITH caspfin_d;
+baspfin_d WITH daspfin_d;
 
-aaspfin WITH daspfin;
+aaspfin_d WITH daspfin_d;
 
 MODEL d2:
-aaspfin WITH baspfin (a2);
-baspfin WITH caspfin (a2);
-caspfin WITH daspfin (a2);
+aaspfin_d WITH baspfin_d (a2);
+baspfin_d WITH caspfin_d (a2);
+caspfin_d WITH daspfin_d (a2);
 
-aaspfin WITH caspfin (b2);
-baspfin WITH daspfin (b2);
+aaspfin_d WITH caspfin_d (b2);
+baspfin_d WITH daspfin_d (b2);
 
-aaspfin WITH daspfin (c2);
+aaspfin_d WITH daspfin_d (c2);
 
-aaspfin baspfin caspfin daspfin (e2);
+aaspfin_d baspfin_d caspfin_d daspfin_d (e2);
 
 MODEL d3:
-aaspfin WITH baspfin (a3);
-baspfin WITH caspfin (a3);
-caspfin WITH daspfin (a3);
+aaspfin_d WITH baspfin_d (a3);
+baspfin_d WITH caspfin_d (a3);
+caspfin_d WITH daspfin_d (a3);
 
-aaspfin WITH caspfin (b3);
-baspfin WITH daspfin (b3);
+aaspfin_d WITH caspfin_d (b3);
+baspfin_d WITH daspfin_d (b3);
 
-aaspfin WITH daspfin (c3);
+aaspfin_d WITH daspfin_d (c3);
 
-aaspfin baspfin caspfin daspfin (e3);
+aaspfin_d baspfin_d caspfin_d daspfin_d (e3);
 
 MODEL d4:
-aaspfin WITH baspfin (a4);
-baspfin WITH caspfin (a4);
-caspfin WITH daspfin (a4);
+aaspfin_d WITH baspfin_d (a4);
+baspfin_d WITH caspfin_d (a4);
+caspfin_d WITH daspfin_d (a4);
 
-aaspfin WITH caspfin (b4);
-baspfin WITH daspfin (b4);
+aaspfin_d WITH caspfin_d (b4);
+baspfin_d WITH daspfin_d (b4);
 
-aaspfin WITH daspfin (c4);
+aaspfin_d WITH daspfin_d (c4);
 
-aaspfin baspfin caspfin daspfin (e4);
+aaspfin_d baspfin_d caspfin_d daspfin_d (e4);
 
 MODEL d5:
-aaspfin WITH baspfin (a5);
-baspfin WITH caspfin (a5);
-caspfin WITH daspfin (a5);
+aaspfin_d WITH baspfin_d (a5);
+baspfin_d WITH caspfin_d (a5);
+caspfin_d WITH daspfin_d (a5);
 
-aaspfin WITH caspfin (b5);
-baspfin WITH daspfin (b5);
+aaspfin_d WITH caspfin_d (b5);
+baspfin_d WITH daspfin_d (b5);
 
-aaspfin WITH daspfin (c5);
+aaspfin_d WITH daspfin_d (c5);
 
-aaspfin baspfin caspfin daspfin (e5);
+aaspfin_d baspfin_d caspfin_d daspfin_d (e5);
 
 
 

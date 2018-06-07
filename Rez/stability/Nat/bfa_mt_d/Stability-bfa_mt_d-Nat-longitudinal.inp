@@ -1,5 +1,5 @@
 
-title: Stability of values - Nat aspfin longitudinal;
+title: Stability of values - Nat bfa_mt_d longitudinal;
 data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
 
 variable:
@@ -151,10 +151,10 @@ dvrt_ind
 dvrt_ind_d;
 
 USEVARIABLES =
-aaspfin
-baspfin
-caspfin
-daspfin
+abfa_mt_d
+bbfa_mt_d
+cbfa_mt_d
+dbfa_mt_d
 aage
 ;
 
@@ -172,62 +172,62 @@ estimator = ml;
 processors = 8; 
 
 MODEL:
-aaspfin WITH baspfin;
-baspfin WITH caspfin;
-caspfin WITH daspfin;
+abfa_mt_d WITH bbfa_mt_d;
+bbfa_mt_d WITH cbfa_mt_d;
+cbfa_mt_d WITH dbfa_mt_d;
 
-aaspfin WITH caspfin;
-baspfin WITH daspfin;
+abfa_mt_d WITH cbfa_mt_d;
+bbfa_mt_d WITH dbfa_mt_d;
 
-aaspfin WITH daspfin;
+abfa_mt_d WITH dbfa_mt_d;
 
 MODEL d2:
-aaspfin WITH baspfin (a2);
-baspfin WITH caspfin (a2);
-caspfin WITH daspfin (a2);
+abfa_mt_d WITH bbfa_mt_d (a2);
+bbfa_mt_d WITH cbfa_mt_d (a2);
+cbfa_mt_d WITH dbfa_mt_d (a2);
 
-aaspfin WITH caspfin (b2);
-baspfin WITH daspfin (b2);
+abfa_mt_d WITH cbfa_mt_d (b2);
+bbfa_mt_d WITH dbfa_mt_d (b2);
 
-aaspfin WITH daspfin (c2);
+abfa_mt_d WITH dbfa_mt_d (c2);
 
-aaspfin baspfin caspfin daspfin (e2);
+abfa_mt_d bbfa_mt_d cbfa_mt_d dbfa_mt_d (e2);
 
 MODEL d3:
-aaspfin WITH baspfin (a3);
-baspfin WITH caspfin (a3);
-caspfin WITH daspfin (a3);
+abfa_mt_d WITH bbfa_mt_d (a3);
+bbfa_mt_d WITH cbfa_mt_d (a3);
+cbfa_mt_d WITH dbfa_mt_d (a3);
 
-aaspfin WITH caspfin (b3);
-baspfin WITH daspfin (b3);
+abfa_mt_d WITH cbfa_mt_d (b3);
+bbfa_mt_d WITH dbfa_mt_d (b3);
 
-aaspfin WITH daspfin (c3);
+abfa_mt_d WITH dbfa_mt_d (c3);
 
-aaspfin baspfin caspfin daspfin (e3);
+abfa_mt_d bbfa_mt_d cbfa_mt_d dbfa_mt_d (e3);
 
 MODEL d4:
-aaspfin WITH baspfin (a4);
-baspfin WITH caspfin (a4);
-caspfin WITH daspfin (a4);
+abfa_mt_d WITH bbfa_mt_d (a4);
+bbfa_mt_d WITH cbfa_mt_d (a4);
+cbfa_mt_d WITH dbfa_mt_d (a4);
 
-aaspfin WITH caspfin (b4);
-baspfin WITH daspfin (b4);
+abfa_mt_d WITH cbfa_mt_d (b4);
+bbfa_mt_d WITH dbfa_mt_d (b4);
 
-aaspfin WITH daspfin (c4);
+abfa_mt_d WITH dbfa_mt_d (c4);
 
-aaspfin baspfin caspfin daspfin (e4);
+abfa_mt_d bbfa_mt_d cbfa_mt_d dbfa_mt_d (e4);
 
 MODEL d5:
-aaspfin WITH baspfin (a5);
-baspfin WITH caspfin (a5);
-caspfin WITH daspfin (a5);
+abfa_mt_d WITH bbfa_mt_d (a5);
+bbfa_mt_d WITH cbfa_mt_d (a5);
+cbfa_mt_d WITH dbfa_mt_d (a5);
 
-aaspfin WITH caspfin (b5);
-baspfin WITH daspfin (b5);
+abfa_mt_d WITH cbfa_mt_d (b5);
+bbfa_mt_d WITH dbfa_mt_d (b5);
 
-aaspfin WITH daspfin (c5);
+abfa_mt_d WITH dbfa_mt_d (c5);
 
-aaspfin baspfin caspfin daspfin (e5);
+abfa_mt_d bbfa_mt_d cbfa_mt_d dbfa_mt_d (e5);
 
 
 

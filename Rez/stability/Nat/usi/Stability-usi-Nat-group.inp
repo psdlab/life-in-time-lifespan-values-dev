@@ -1,5 +1,5 @@
 
-title: Stability of values - Nat aspfin longitudinal;
+title: Stability of values - Nat usi group;
 data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
 
 variable:
@@ -151,10 +151,10 @@ dvrt_ind
 dvrt_ind_d;
 
 USEVARIABLES =
-aaspfin
-baspfin
-caspfin
-daspfin
+ausi
+busi
+cusi
+dusi
 aage
 ;
 
@@ -171,63 +171,19 @@ type = general;
 estimator = ml;
 processors = 8; 
 
+
 MODEL:
-aaspfin WITH baspfin;
-baspfin WITH caspfin;
-caspfin WITH daspfin;
 
-aaspfin WITH caspfin;
-baspfin WITH daspfin;
+ausi WITH busi (a);
+busi WITH cusi (a);
+cusi WITH dusi (a);
 
-aaspfin WITH daspfin;
+ausi WITH cusi (b);
+busi WITH dusi (b);
 
-MODEL d2:
-aaspfin WITH baspfin (a2);
-baspfin WITH caspfin (a2);
-caspfin WITH daspfin (a2);
+ausi WITH dusi (c);
 
-aaspfin WITH caspfin (b2);
-baspfin WITH daspfin (b2);
-
-aaspfin WITH daspfin (c2);
-
-aaspfin baspfin caspfin daspfin (e2);
-
-MODEL d3:
-aaspfin WITH baspfin (a3);
-baspfin WITH caspfin (a3);
-caspfin WITH daspfin (a3);
-
-aaspfin WITH caspfin (b3);
-baspfin WITH daspfin (b3);
-
-aaspfin WITH daspfin (c3);
-
-aaspfin baspfin caspfin daspfin (e3);
-
-MODEL d4:
-aaspfin WITH baspfin (a4);
-baspfin WITH caspfin (a4);
-caspfin WITH daspfin (a4);
-
-aaspfin WITH caspfin (b4);
-baspfin WITH daspfin (b4);
-
-aaspfin WITH daspfin (c4);
-
-aaspfin baspfin caspfin daspfin (e4);
-
-MODEL d5:
-aaspfin WITH baspfin (a5);
-baspfin WITH caspfin (a5);
-caspfin WITH daspfin (a5);
-
-aaspfin WITH caspfin (b5);
-baspfin WITH daspfin (b5);
-
-aaspfin WITH daspfin (c5);
-
-aaspfin baspfin caspfin daspfin (e5);
+ausi busi cusi dusi (e);
 
 
 

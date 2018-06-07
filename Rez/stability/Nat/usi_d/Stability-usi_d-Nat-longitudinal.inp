@@ -1,5 +1,5 @@
 
-title: Stability of values - Nat aspfin longitudinal;
+title: Stability of values - Nat usi_d longitudinal;
 data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
 
 variable:
@@ -151,10 +151,10 @@ dvrt_ind
 dvrt_ind_d;
 
 USEVARIABLES =
-aaspfin
-baspfin
-caspfin
-daspfin
+ausi_d
+busi_d
+cusi_d
+dusi_d
 aage
 ;
 
@@ -172,62 +172,62 @@ estimator = ml;
 processors = 8; 
 
 MODEL:
-aaspfin WITH baspfin;
-baspfin WITH caspfin;
-caspfin WITH daspfin;
+ausi_d WITH busi_d;
+busi_d WITH cusi_d;
+cusi_d WITH dusi_d;
 
-aaspfin WITH caspfin;
-baspfin WITH daspfin;
+ausi_d WITH cusi_d;
+busi_d WITH dusi_d;
 
-aaspfin WITH daspfin;
+ausi_d WITH dusi_d;
 
 MODEL d2:
-aaspfin WITH baspfin (a2);
-baspfin WITH caspfin (a2);
-caspfin WITH daspfin (a2);
+ausi_d WITH busi_d (a2);
+busi_d WITH cusi_d (a2);
+cusi_d WITH dusi_d (a2);
 
-aaspfin WITH caspfin (b2);
-baspfin WITH daspfin (b2);
+ausi_d WITH cusi_d (b2);
+busi_d WITH dusi_d (b2);
 
-aaspfin WITH daspfin (c2);
+ausi_d WITH dusi_d (c2);
 
-aaspfin baspfin caspfin daspfin (e2);
+ausi_d busi_d cusi_d dusi_d (e2);
 
 MODEL d3:
-aaspfin WITH baspfin (a3);
-baspfin WITH caspfin (a3);
-caspfin WITH daspfin (a3);
+ausi_d WITH busi_d (a3);
+busi_d WITH cusi_d (a3);
+cusi_d WITH dusi_d (a3);
 
-aaspfin WITH caspfin (b3);
-baspfin WITH daspfin (b3);
+ausi_d WITH cusi_d (b3);
+busi_d WITH dusi_d (b3);
 
-aaspfin WITH daspfin (c3);
+ausi_d WITH dusi_d (c3);
 
-aaspfin baspfin caspfin daspfin (e3);
+ausi_d busi_d cusi_d dusi_d (e3);
 
 MODEL d4:
-aaspfin WITH baspfin (a4);
-baspfin WITH caspfin (a4);
-caspfin WITH daspfin (a4);
+ausi_d WITH busi_d (a4);
+busi_d WITH cusi_d (a4);
+cusi_d WITH dusi_d (a4);
 
-aaspfin WITH caspfin (b4);
-baspfin WITH daspfin (b4);
+ausi_d WITH cusi_d (b4);
+busi_d WITH dusi_d (b4);
 
-aaspfin WITH daspfin (c4);
+ausi_d WITH dusi_d (c4);
 
-aaspfin baspfin caspfin daspfin (e4);
+ausi_d busi_d cusi_d dusi_d (e4);
 
 MODEL d5:
-aaspfin WITH baspfin (a5);
-baspfin WITH caspfin (a5);
-caspfin WITH daspfin (a5);
+ausi_d WITH busi_d (a5);
+busi_d WITH cusi_d (a5);
+cusi_d WITH dusi_d (a5);
 
-aaspfin WITH caspfin (b5);
-baspfin WITH daspfin (b5);
+ausi_d WITH cusi_d (b5);
+busi_d WITH dusi_d (b5);
 
-aaspfin WITH daspfin (c5);
+ausi_d WITH dusi_d (c5);
 
-aaspfin baspfin caspfin daspfin (e5);
+ausi_d busi_d cusi_d dusi_d (e5);
 
 
 
