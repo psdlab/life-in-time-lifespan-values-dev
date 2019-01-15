@@ -1,12 +1,14 @@
 Mplus VERSION 8 (Linux)
 MUTHEN & MUTHEN
-06/07/2018   4:46 PM
+01/08/2019   3:26 PM
 
 INPUT INSTRUCTIONS
 
 
-  title: PxVx Univariate LCM-SR - post mi - usi_d;
-  data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv;
+  title: PxVx Univariate LCM-SR - post mi - aspfinc;
+
+
+  data: file = /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc_famc.tsv;
 
   variable:
   names =
@@ -154,13 +156,18 @@ INPUT INSTRUCTIONS
   dvrt_col
   dvrt_col_d
   dvrt_ind
-  dvrt_ind_d;
+  dvrt_ind_d
+  aaspfinc
+  baspfinc
+  caspfinc
+  daspfinc
+  ;
 
   USEVARIABLES =
-  ausi_d
-  busi_d
-  cusi_d
-  dusi_d
+  aaspfinc
+  baspfinc
+  caspfinc
+  daspfinc
   a1
   a2
   a3
@@ -185,26 +192,26 @@ INPUT INSTRUCTIONS
 
   MODEL:
 
-  i_usi_d s_usi_d |  ausi_d busi_d cusi_d dusi_d AT a1 a2 a3 a4;
+  i_aspfinc s_aspfinc |  aaspfinc baspfinc caspfinc daspfinc AT a1 a2 a3 a4;
 
-  s_usi_d WITH i_usi_d; ! freeing factor covs because of "nocovariances";
+  s_aspfinc WITH i_aspfinc; ! freeing factor covs because of "nocovariances";
 
-  p1 BY ausi_d@1; ! Residual "factors";
-  p2 BY busi_d@1;
-  p3 BY cusi_d@1;
-  p4 BY dusi_d@1;
+  p1 BY aaspfinc@1; ! Residual "factors";
+  p2 BY baspfinc@1;
+  p3 BY caspfinc@1;
+  p4 BY daspfinc@1;
 
   !residual variances on observed/manifest vars set to 0
-  ausi_d@0;
-  busi_d@0;
-  cusi_d@0;
-  dusi_d@0;
+  aaspfinc@0;
+  baspfinc@0;
+  caspfinc@0;
+  daspfinc@0;
 
   ! means of observed/manifest vars set to 0
-  [ausi_d@0];
-  [busi_d@0];
-  [cusi_d@0];
-  [dusi_d@0];
+  [aaspfinc@0];
+  [baspfinc@0];
+  [caspfinc@0];
+  [daspfinc@0];
 
   p2 p3 p4 (c); ! estimate variances of residual "factors"
 
@@ -234,7 +241,7 @@ INPUT INSTRUCTIONS
 
 
 
-PxVx Univariate LCM-SR - post mi - usi_d;
+PxVx Univariate LCM-SR - post mi - aspfinc;
 
 SUMMARY OF ANALYSIS
 
@@ -248,10 +255,10 @@ Number of continuous latent variables                            6
 Observed dependent variables
 
   Continuous
-   AUSI_D      BUSI_D      CUSI_D      DUSI_D
+   AASPFINC    BASPFINC    CASPFINC    DASPFINC
 
 Continuous latent variables
-   P1          P2          P3          P4          I_USI_D     S_USI_D
+   P1          P2          P3          P4          I_ASPFIN    S_ASPFIN
 
 Variables with special functions
 
@@ -275,13 +282,13 @@ Convergence criterion for H1                             0.100D-03
 Optimization algorithm                                         EMA
 
 Input data file(s)
-  /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc.tsv
+  /home/jflournoy/code_new/lnt_pxvx/Data/lnt_nat_recalc_famc.tsv
 Input data format  FREE
 
 
 SUMMARY OF DATA
 
-     Number of missing data patterns             8
+     Number of missing data patterns             9
 
 
 SUMMARY OF MISSING DATA PATTERNS
@@ -289,19 +296,19 @@ SUMMARY OF MISSING DATA PATTERNS
 
      MISSING DATA PATTERNS (x = not missing)
 
-           1  2  3  4  5  6  7  8
- AUSI_D    x  x  x  x  x  x  x  x
- BUSI_D    x     x  x        x
- CUSI_D    x           x     x  x
- DUSI_D    x     x     x  x
+           1  2  3  4  5  6  7  8  9
+ AASPFINC  x  x  x  x  x  x  x  x
+ BASPFINC  x     x  x        x     x
+ CASPFINC  x           x     x  x
+ DASPFINC  x     x     x  x
 
 
      MISSING DATA PATTERN FREQUENCIES
 
     Pattern   Frequency     Pattern   Frequency     Pattern   Frequency
-          1         493           4          48           7          46
-          2         176           5          24           8          23
-          3          28           6          25
+          1         495           4          48           7          47
+          2         173           5          23           8          24
+          3          27           6          25           9           1
 
 
 COVARIANCE COVERAGE OF DATA
@@ -313,12 +320,12 @@ Minimum covariance coverage value   0.100
 
 
            Covariance Coverage
-              AUSI_D        BUSI_D        CUSI_D        DUSI_D
+              AASPFINC      BASPFINC      CASPFINC      DASPFINC
               ________      ________      ________      ________
- AUSI_D         1.000
- BUSI_D         0.713         0.713
- CUSI_D         0.679         0.625         0.679
- DUSI_D         0.660         0.604         0.599         0.660
+ AASPFINC       0.999
+ BASPFINC       0.715         0.716
+ CASPFINC       0.683         0.628         0.683
+ DASPFINC       0.660         0.605         0.600         0.660
 
 
 SAMPLE STATISTICS
@@ -328,30 +335,30 @@ SAMPLE STATISTICS
 
 
            Means
-              AUSI_D        BUSI_D        CUSI_D        DUSI_D
+              AASPFINC      BASPFINC      CASPFINC      DASPFINC
               ________      ________      ________      ________
-               30.287        29.901        29.882        30.173
+               37.469        38.164        38.484        39.200
 
 
            Covariances
-              AUSI_D        BUSI_D        CUSI_D        DUSI_D
+              AASPFINC      BASPFINC      CASPFINC      DASPFINC
               ________      ________      ________      ________
- AUSI_D       358.802
- BUSI_D       238.769       355.327
- CUSI_D       220.793       237.001       367.451
- DUSI_D       201.630       206.288       245.003       340.523
+ AASPFINC     196.948
+ BASPFINC     154.134       198.390
+ CASPFINC     152.716       162.060       207.405
+ DASPFINC     147.040       157.985       164.316       209.949
 
 
            Correlations
-              AUSI_D        BUSI_D        CUSI_D        DUSI_D
+              AASPFINC      BASPFINC      CASPFINC      DASPFINC
               ________      ________      ________      ________
- AUSI_D         1.000
- BUSI_D         0.669         1.000
- CUSI_D         0.608         0.656         1.000
- DUSI_D         0.577         0.593         0.693         1.000
+ AASPFINC       1.000
+ BASPFINC       0.780         1.000
+ CASPFINC       0.756         0.799         1.000
+ DASPFINC       0.723         0.774         0.787         1.000
 
 
-     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -10896.580
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -9807.464
 
 
 UNIVARIATE SAMPLE STATISTICS
@@ -362,14 +369,14 @@ UNIVARIATE SAMPLE STATISTICS
          Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
         Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
 
-     AUSI_D               30.287       0.165       0.000   10.89%       8.333     25.000     33.333
-             863.000     358.802      -0.530      91.667    0.23%      33.333     50.000
-     BUSI_D               29.546       0.210       0.000   11.71%       8.333     25.000     33.333
-             615.000     347.530      -0.216     100.000    0.16%      33.333     41.667
-     CUSI_D               30.006       0.210       0.000   11.43%       8.333     25.000     33.333
-             586.000     364.353      -0.506      91.667    0.17%      33.333     50.000
-     DUSI_D               29.971       0.105       0.000   11.05%       8.333     25.000     33.333
-             570.000     338.900      -0.560      83.333    0.53%      33.333     50.000
+     AASPFINC             37.475       0.295       0.337    0.12%      25.092     33.803     36.880
+             862.000     197.063       0.423     100.000    0.12%      40.080     50.015
+     BASPFINC             38.030       0.188       2.021    0.16%      25.765     33.680     37.554
+             618.000     192.416      -0.264      84.201    0.16%      41.901     50.521
+     CASPFINC             38.458       0.229       6.231    0.17%      25.260     34.522     38.396
+             589.000     204.498      -0.044      97.168    0.17%      42.100     50.689
+     DASPFINC             38.857       0.237       0.000    0.18%      26.102     35.196     38.901
+             570.000     207.530      -0.006      88.074    0.18%      42.437     51.363
 
 
 THE MODEL ESTIMATION TERMINATED NORMALLY
@@ -382,15 +389,15 @@ Number of Free Parameters                        8
 
 Loglikelihood
 
-          H0 Value                      -10883.353
-          H0 Scaling Correction Factor      1.0010
+          H0 Value                       -9818.164
+          H0 Scaling Correction Factor      1.2418
             for MLR
 
 Information Criteria
 
-          Akaike (AIC)                   21782.706
-          Bayesian (BIC)                 21820.789
-          Sample-Size Adjusted BIC       21795.384
+          Akaike (AIC)                   19652.329
+          Bayesian (BIC)                 19690.412
+          Sample-Size Adjusted BIC       19665.006
             (n* = (n + 2) / 24)
 
 
@@ -401,67 +408,67 @@ MODEL RESULTS
                     Estimate       S.E.  Est./S.E.    P-Value
 
  P1       BY
-    AUSI_D             1.000      0.000    999.000    999.000
+    AASPFINC           1.000      0.000    999.000    999.000
 
  P2       BY
-    BUSI_D             1.000      0.000    999.000    999.000
+    BASPFINC           1.000      0.000    999.000    999.000
 
  P3       BY
-    CUSI_D             1.000      0.000    999.000    999.000
+    CASPFINC           1.000      0.000    999.000    999.000
 
  P4       BY
-    DUSI_D             1.000      0.000    999.000    999.000
+    DASPFINC           1.000      0.000    999.000    999.000
 
  P4         ON
-    P3                 0.215      0.046      4.643      0.000
+    P3                 0.152      0.058      2.605      0.009
 
  P3         ON
-    P2                 0.215      0.046      4.643      0.000
+    P2                 0.152      0.058      2.605      0.009
 
  P2         ON
-    P1                 0.215      0.046      4.643      0.000
+    P1                 0.152      0.058      2.605      0.009
 
- S_USI_D  WITH
-    I_USI_D            0.362      0.604      0.599      0.549
+ S_ASPFIN WITH
+    I_ASPFINC         -1.197      0.525     -2.281      0.023
 
  Means
     P1                 0.000      0.000    999.000    999.000
-    I_USI_D           30.453      0.557     54.697      0.000
-    S_USI_D           -0.284      0.053     -5.335      0.000
+    I_ASPFINC         38.139      0.459     83.118      0.000
+    S_ASPFINC         -0.024      0.040     -0.609      0.542
 
  Intercepts
-    AUSI_D             0.000      0.000    999.000    999.000
-    BUSI_D             0.000      0.000    999.000    999.000
-    CUSI_D             0.000      0.000    999.000    999.000
-    DUSI_D             0.000      0.000    999.000    999.000
+    AASPFINC           0.000      0.000    999.000    999.000
+    BASPFINC           0.000      0.000    999.000    999.000
+    CASPFINC           0.000      0.000    999.000    999.000
+    DASPFINC           0.000      0.000    999.000    999.000
     P2                 0.000      0.000    999.000    999.000
     P3                 0.000      0.000    999.000    999.000
     P4                 0.000      0.000    999.000    999.000
 
  Variances
-    P1               152.912     12.852     11.898      0.000
-    I_USI_D          182.229     17.836     10.217      0.000
-    S_USI_D            0.118      0.117      1.009      0.313
+    P1                55.426      4.988     11.112      0.000
+    I_ASPFINC        146.297     11.849     12.346      0.000
+    S_ASPFINC          0.051      0.081      0.627      0.531
 
  Residual Variances
-    AUSI_D             0.000      0.000    999.000    999.000
-    BUSI_D             0.000      0.000    999.000    999.000
-    CUSI_D             0.000      0.000    999.000    999.000
-    DUSI_D             0.000      0.000    999.000    999.000
-    P2               141.189      7.965     17.727      0.000
-    P3               141.189      7.965     17.727      0.000
-    P4               141.189      7.965     17.727      0.000
+    AASPFINC           0.000      0.000    999.000    999.000
+    BASPFINC           0.000      0.000    999.000    999.000
+    CASPFINC           0.000      0.000    999.000    999.000
+    DASPFINC           0.000      0.000    999.000    999.000
+    P2                49.397      3.543     13.943      0.000
+    P3                49.397      3.543     13.943      0.000
+    P4                49.397      3.543     13.943      0.000
 
 
 QUALITY OF NUMERICAL RESULTS
 
-     Condition Number for the Information Matrix              0.111E-02
+     Condition Number for the Information Matrix              0.190E-02
        (ratio of smallest to largest eigenvalue)
 
 
-     Beginning Time:  16:46:44
-        Ending Time:  16:46:45
-       Elapsed Time:  00:00:01
+     Beginning Time:  15:26:13
+        Ending Time:  15:26:17
+       Elapsed Time:  00:00:04
 
 
 
